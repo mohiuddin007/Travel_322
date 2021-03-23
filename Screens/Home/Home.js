@@ -1,10 +1,16 @@
 import React from 'react';
-import { Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, ImageBackground, ScrollView, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
 // import Icon from 'react-native-vector-icons/FontAwesome';
 
-const Home = () => {
+const Home = ({navigation}) => {
+const handlePress = () => {
+    navigation.navigate('PlaceDetails')
+}
     return (
         <ScrollView>
+            <TouchableWithoutFeedback
+            onPress={handlePress}
+            >
             <ImageBackground
                 source={require('../../images/Rectangle3.png')}
                 style={styles.backgroundImg}
@@ -26,6 +32,8 @@ const Home = () => {
                 </View>
 
             </ImageBackground>
+            </TouchableWithoutFeedback>
+            
             <ScrollView
                 horizontal={true}
             >

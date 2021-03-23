@@ -1,12 +1,15 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import Home from './Screens/Home/Home';
+import Navigator from './Routes/HomeStack';
+// import Home from './Screens/Home/Home';
 
 const App = () => {
   return (
-    <View>
-        <Home/>
-    </View>
+        <Navigator/>
+        // <View>
+        // <Home/>
+
+        // </View>
   );
 };
 
