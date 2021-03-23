@@ -1,14 +1,37 @@
 import React from 'react';
-import { ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 const PlaceDetails = () => {
+    const images = [
+        "https://i.ibb.co/0YDvgD9/Rectangle3-1.png",
+        "https://i.ibb.co/rw9MrV2/Rectangle3.png",
+        'https://images.pexels.com/photos/5282269/pexels-photo-5282269.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
+        "https://i.ibb.co/f8CfJgN/Rectangle6.png",
+        "https://i.ibb.co/KrdDLdK/Rectangle7.png",
+    ]
     return (
         <ScrollView>
-            <ImageBackground
-                source={require('../../images/Rectangle3(1).png')}
-                style={styles.topBackgroundImg}
-            >
-            </ImageBackground>
+           {/* <ScrollView
+           pagingEnabled
+           horizontal={true}
+           style={styles.topBackgroundImgWrapper}
+           >
+            {
+                images.map((image, index) =>{
+                    <Image
+                    key={index}
+                    source={{uri: image}}
+                    style={styles.topBackgroundImg}
+                >
+                </Image>
+                 })
+            } 
+            </ScrollView> */}
+             <ImageBackground
+                    source={require('../../images/Rectangle3(1).png')}
+                    style={styles.topBackgroundImg}
+                >
+                </ImageBackground> 
             <View style={styles.description}>
                 <Text style={styles.park}>
                     Jasper National Park
@@ -33,8 +56,12 @@ const PlaceDetails = () => {
     );
 };
 const styles = StyleSheet.create({
-    topBackgroundImg: {
+    topBackgroundImgWrapper:{
         height: 390
+    },
+    topBackgroundImg: {
+        height: 390,
+        resizeMode: 'cover'
     },
     description: {
         backgroundColor: '#FFFFFF',
